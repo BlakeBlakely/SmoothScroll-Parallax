@@ -1,0 +1,86 @@
+html {
+	margin: 0;
+	height: 100%;
+}
+body {
+	margin: 0;
+}
+#parallax {
+	height: 100%;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	perspective: 1px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	
+}
+#parallax_group {
+	position: relative;
+	height: 100vh;
+	transform-style: preserve-3d;
+	
+}
+#parallax_image {
+	background-position: 50% 50%;
+	z-index: 0;
+	position: relative;
+	height: 100%;
+}
+
+#login_container {
+	height: 730px;
+	width: 100%;
+	background-color: grey;
+	z-index: 1;
+	display: block;
+	
+}
+.logo {
+	width: 85%;
+	height: auto;
+	background-attachment: fixed;
+	position: relative;
+	padding-left: 7%;
+	margin-top: 20%;
+}
+.login_dummy {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	z-index: 1;
+}
+
+#login-box {
+	margin-left: 45%;
+	padding-top: 200px;
+	
+}
+h5 {
+	position: fixed;
+	margin: 0;
+	bottom: 0;
+	margin-bottom: 15px;
+	padding-left: 2%;	
+}
+label {
+	font-family: helvetica, sans-serif;
+	font-size: 120%;
+	font-weight: bold;
+}
+.r-m {
+	font-size: 75%;
+}
+a {
+	color: black;
+	font-size: 80%;
+	text-decoration: none;
+}
+
+a:visited {
+	color: black;
+	text-decoration: none;
+
+}

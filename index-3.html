@@ -1,0 +1,187 @@
+<doctype html>
+	<html>
+		<head>
+			<link rel="stylesheet" type="text/css" href="../css/main3.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+			
+			<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+			<script type="text/javascript" src="../javascript/smoothscroll.js"></script>
+			<script>
+							$('a').click(function(){
+						$('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;
+});
+			
+			</script>
+
+		<!--	<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 1200, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+	<!--		
+			<script>
+			window.onload = function(){
+    function handleinput(){
+        if(document.loginform.username.value == ""){
+            document.getElementById("usernameError").innerHTML = "You must enter a username";
+            return false;
+        }
+ 
+        if(document.loginform.password.value == ""){
+            document.getElementById("passwordError").innerHTML = "You must enter a password";
+            return false;
+        }
+    }
+ 
+    document.getElementById("login").onsubmit = handleinput;
+}
+			</script>
+		
+			
+		<script>
+		// URL updates and the element focus is maintained
+// originally found via in Update 3 on http://www.learningjquery.com/2007/10/improved-animated-scrolling-script-for-same-page-links
+
+// filter handling for a /dir/ OR /indexordefault.page
+function filterPath(string) {
+  return string
+    .replace(/^\//, '')
+    .replace(/(index|default).[a-zA-Z]{3,4}$/, '')
+    .replace(/\/$/, '');
+}
+
+var locationPath = filterPath(location.pathname);
+$('a[href*="#"]').each(function () {
+  var thisPath = filterPath(this.pathname) || locationPath;
+  var hash = this.hash;
+  if ($("#" + hash.replace(/#/, '')).length) {
+    if (locationPath == thisPath && (location.hostname == this.hostname || !this.hostname) && this.hash.replace(/#/, '')) {
+      var $target = $(hash), target = this.hash;
+      if (target) {
+        $(this).click(function (event) {
+          event.preventDefault();
+          $('html, body').animate({scrollTop: $target.offset().top}, 2000, function () {
+            location.hash = target; 
+            $target.focus();
+            if ($target.is(":focus")){ //checking if the target was focused
+              return false;
+            }else{
+              $target.attr('tabindex','-1'); //Adding tabindex for elements not focusable
+              $target.focus(); //Setting focus
+            };
+          });       
+        });
+      }
+    }
+  }
+});	
+		</script>
+		<script>
+			// Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+		</script>
+			
+			-->
+		</head>
+		<header>
+		
+		</header>
+		<body>
+			<div id="content">
+				<div id="parallax">
+					<div id="parallax_group">
+						<div id="parallax_image" depth="-0.5" style="transform: scale(2) translateY(-1.33px) translateZ(-0.999px);"><img class="logo" src="../images/SCHRIFT2-02.png" alt="Motor Carbon Logo">
+						</div>
+							<div class="login_dummy">
+			 					<a href="#login_container">Login</a>
+								
+								
+							</div>
+						
+						
+						<div id="login_container">
+							<div id="scroll-login">
+							<div id="login-box">
+								<div id="login">
+									<label class="username_password"><b>Username</b></label><br>
+									<input class="input_un_pw" type="text" placeholder="Enter Username" name="uname" required><span id="usernameError"></span><br><br>
+
+									<label class="username_password"><b>Password</b></label><br>
+    								<input class="input_un_pw" type="password" placeholder="Enter Password" name="psw" required><span id="passwordError"></span><br><br>
+										<div id="botton_submit">
+    								<button type="submit"><a href="login_failed.html">Login</a></button>
+									<input class="checkbox" type="checkbox" checked="checked"> <label class="r-m">Remember me</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h5>&copy; MotorCarbon LLC. All Rights Reserved.</h5>
+		</body>
+	
+	
+	
+	</html>
+</doctype>
